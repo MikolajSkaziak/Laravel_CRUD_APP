@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PeopleController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('skaziak/310792/people',[PeopleController::class, 'index']);
+
+Route::get('skaziak/310792/people/{people}', [PeopleController::class, 'show']);
+
+Route::post('skaziak/310792/people', [PeopleController::class, 'store']);
+
+Route::put('skaziak/310792/people/{people}', [PeopleController::class, 'update']);
+
+Route::delete('skaziak/310792/people/{people}', [PeopleController::class, 'destroy']);
