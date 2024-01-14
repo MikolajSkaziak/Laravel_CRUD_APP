@@ -12,14 +12,14 @@ class PeopleController extends Controller
         return People::all();
     }
 
-    public function store(Request $request)
+    public function create(Request $request)
     {
         $people = People::create($request->all());
 
         return response()->json($people, 201);
     }
 
-    public function show(People $people)
+    public function read(People $people)
     {
         return response()->json($people);
     }
@@ -31,7 +31,7 @@ class PeopleController extends Controller
         return response()->json($people);
     }
 
-    public function destroy(People $people)
+    public function delete(People $people)
     {
         $people->delete();
 

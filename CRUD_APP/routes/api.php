@@ -20,10 +20,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('skaziak/310792/people',[PeopleController::class, 'index']);
 
-Route::get('skaziak/310792/people/{people}', [PeopleController::class, 'show']);
+Route::get('skaziak/310792/people/{people}', [PeopleController::class, 'read']);
 
-Route::post('skaziak/310792/people', [PeopleController::class, 'store']);
+Route::post('skaziak/310792/people', [PeopleController::class, 'create']);
 
 Route::put('skaziak/310792/people/{people}', [PeopleController::class, 'update']);
 
-Route::delete('skaziak/310792/people/{people}', [PeopleController::class, 'destroy']);
+Route::delete('skaziak/310792/people/{people}', [PeopleController::class, 'delete']);
